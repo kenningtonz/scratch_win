@@ -68,6 +68,15 @@ function formCheck(e) {
     let errorsFound = 0;
     resetErrors();
 
+    if (isMinor == true) {
+        fieldsCheckerIsMinor.forEach(inputField => {
+            if (!inputField.checker(inputField)) {
+                inputField.error.innerText = inputField.msg;
+                errorsFound += 1;
+            }
+        });
+    }
+
     fieldsChecker.forEach(inputField => {
         if (!inputField.checker(inputField)) {
             inputField.error.innerText = inputField.msg;
@@ -127,6 +136,15 @@ function saveFormData(fieldsChecker) {
     formData =  (new FormData(fieldsChecker[0].field.value, fieldsChecker[1].field.value, fieldsChecker[2].field.value, fieldsChecker[3].field.value, fieldsChecker[4].field.value, fieldsChecker[5].field.value, fieldsChecker[6].field.value, fieldsChecker[7].field.value, fieldsChecker[8].field.value, fieldsChecker[9].field.value, fieldsChecker[10].field.value));
 }
 
+// class FieldChecker{
+//     constructor(field, checker, error, msg){
+//         this.field = field;
+//         this.checker = checker;
+//         this.error = error;
+//         this.msg = msg;
+//     }
+// }
+
 function formInitiator() {
     let fName = document.getElementById('fName');
     let fNameError = document.getElementById('fNameError');
@@ -157,7 +175,7 @@ function formInitiator() {
 
     let GuardianNumber = document.getElementById('GpNumber');
     let GpNumberError = document.getElementById('GpNumberError');
-    
+
     let parentEmail = document.getElementById('parentEmail');
     let parentEmailError = document.getElementById('parentEmailError');
 
@@ -171,11 +189,15 @@ function formInitiator() {
         { field: phone, checker: hasNums, error: phoneError, msg: "The phone number you entered is not in the correct format. Please use only numbers." },
         { field: email, checker: emailChars, error: emailError, msg: "The email address you entered is not valid. Please provide a valid email address." },
         { field: date, checker: hasDate, error: dateError, msg: "Invalid Date" },
+    ];
+
+    fieldsCheckerIsMinor = [
         { field: GuardianNameFirst, checker: hasChars, error: GfNameError, msg: "Invalid Name" },
         { field: GuardianNameLast, checker: hasChars, error: GlNameError, msg: "Invalid Name" },
         { field: parentEmail, checker: emailChars, error: parentEmailError, msg: "Invalid Email" },
         { field: GuardianNumber, checker: hasNums, error: GpNumberError, msg: "Invalid Phone Number" },
-    ];
+    ]
+
 
     const parentInfoFields = document.getElementById('parentInfoFields');
 
@@ -183,15 +205,16 @@ function formInitiator() {
         const dob = new Date(this.value);
         const today = new Date();
         const age = today.getFullYear() - dob.getFullYear();
+        console.log(age);
 
 
         if (age < 16) {
             isMinor = true;
             dateError.textContent = "";
             parentInfoFields.style.display = 'block';
-            needsGuardian()
-        } else {
 
+        } else {
+            isMinor = false;
             parentInfoFields.style.display = 'none';
         }
     });
