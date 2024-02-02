@@ -1,3 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    padding: 40px;
+}
+
 #parentInfoFields {
     display: none;
 }
@@ -7,9 +20,56 @@
     width: 100%;
     overflow: auto;
     border: 1px solid #000;
+    background-color: #eefef1;
+    border-radius: 5px;
+    padding: 15px;
 }
 
 .disabled {
     pointer-events: none;
     opacity: 0.6;
+}
+
+fieldset {
+    border-radius: 25px;
+    background-color: #badc58;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 50px;
+    gap: 15px;
+    align-items: center;
+}
+
+.checkBox {
+    display: flex;
+    /* align-items: center; */
+}
+
+.checkBox input {
+    border: 2px solid #4f7340;
+    accent-color: #282e65;
+}
+
+input {
+    border-radius: 5px;
+    background-color: #eefef1;
+    border: none;
+    padding: 8px;
+    width: 100%;
+}
+
+input[type="text"]:focus {
+    border: 2px solid #4f7340;
+}
+
+.child100 {
+    flex: 1 1 100%;
+}
+
+.child50 {
+    flex: 1 1 48%;
+}
+
+.child30 {
+    flex: 1 1 31%;
 }
