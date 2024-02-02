@@ -77,10 +77,11 @@ function formCheck(e) {
 
     if (errorsFound > 0) {
         console.log("FAIL");
-        saveFormData(fieldsChecker);
-        console.log(formDataList);
+        
 
     } else {
+        saveFormData(fieldsChecker);
+        console.log(formData);
         console.log("PASS");
         // do something with the data
     }
@@ -93,16 +94,18 @@ function needsGuardian() {
         return true
     }
     else {
-        return hasChars()
+        return hasChars();
     }
 }
 
 class FormData {
-    constructor(fName, lName, address, postal, province, city, phone, email, date, parentName, parentEmail) {
+    constructor(fName, lName, address, postal, province, city, phone, email, date, GuardianNameFirst,GuardianNameLast, parentEmail, GuardianNumber) {
         if (isMinor == true) {
             this.isMinor = true;
-            this.parentName = parentName;
+            this.GuardianNameFirst = GuardianNameFirst;
+            this.GuardianNameLast = GuardianNameLast;
             this.parentEmail = parentEmail;
+            this.GuardianNumber = GuardianNumber;
         }
         this.fName = fName;
         this.lName = lName;
@@ -117,10 +120,11 @@ class FormData {
 
 }
 
-const formDataList = [];
+let formData = {}
 
 function saveFormData(fieldsChecker) {
-    formDataList.push(new FormData(fieldsChecker[0].field.value, fieldsChecker[1].field.value, fieldsChecker[2].field.value, fieldsChecker[3].field.value, fieldsChecker[4].field.value, fieldsChecker[5].field.value, fieldsChecker[6].field.value, fieldsChecker[7].field.value, fieldsChecker[8].field.value, fieldsChecker[9].field.value, fieldsChecker[10].field.value));
+  
+    formData =  (new FormData(fieldsChecker[0].field.value, fieldsChecker[1].field.value, fieldsChecker[2].field.value, fieldsChecker[3].field.value, fieldsChecker[4].field.value, fieldsChecker[5].field.value, fieldsChecker[6].field.value, fieldsChecker[7].field.value, fieldsChecker[8].field.value, fieldsChecker[9].field.value, fieldsChecker[10].field.value));
 }
 
 function formInitiator() {
