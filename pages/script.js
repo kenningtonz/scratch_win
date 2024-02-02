@@ -111,23 +111,35 @@ function formInitiator() {
     let emailError = document.getElementById('emailError');
     let date = document.getElementById('date');
     let dateError = document.getElementById('dateError');
-    let parentName = document.getElementById('parentName');
-    let parentError = document.getElementById('parentError');
+
+
+    let GuardianNameFirst = document.getElementById('GfName');
+    let GfNameError = document.getElementById('GfNameError');
+
+    let GuardianNameLast = document.getElementById('GlName');
+    let GlNameError = document.getElementById('GlNameError');
+
+
+    let GuardianNumber = document.getElementById('GpNumber');
+    let GpNumberError = document.getElementById('GpNumberError');
+    
     let parentEmail = document.getElementById('parentEmail');
     let parentEmailError = document.getElementById('parentEmailError');
 
     fieldsChecker = [
-        { field: fName, checker: hasChars, error: fNameError, msg: "Invalid First Name" },
-        { field: lName, checker: hasChars, error: lNameError, msg: "Invalid Last Name" },
+        { field: fName, checker: hasChars, error: fNameError, msg: "Please enter a valid name." },
+        { field: lName, checker: hasChars, error: lNameError, msg: "Please enter a valid name." },
         { field: address, checker: hasCharsNum, error: stError, msg: "Invalid Address" },
         { field: postal, checker: hasSpecialChars, error: postalError, msg: "Invalid Postal Code" },
         { field: province, checker: hasChars, error: provinceError, msg: "Invalid Province" },
         { field: city, checker: hasChars, error: cityError, msg: "Invalid City" },
-        { field: phone, checker: hasNums, error: phoneError, msg: "Invalid Phone Number" },
-        { field: email, checker: emailChars, error: emailError, msg: "Invalid Email" },
+        { field: phone, checker: hasNums, error: phoneError, msg: "The phone number you entered is not in the correct format. Please use only numbers." },
+        { field: email, checker: emailChars, error: emailError, msg: "The email address you entered is not valid. Please provide a valid email address." },
         { field: date, checker: hasDate, error: dateError, msg: "Invalid Date" },
-        { field: parentName, checker: hasChars, error: parentError, msg: "Invalid Parent's Name" },
+        { field: GuardianNameFirst, checker: hasChars, error: GfNameError, msg: "Invalid Name" },
+        { field: GuardianNameLast, checker: hasChars, error: GlNameError, msg: "Invalid Name" },
         { field: parentEmail, checker: emailChars, error: parentEmailError, msg: "Invalid Email" },
+        { field: GuardianNumber, checker: hasNums, error: GpNumberError, msg: "Invalid Phone Number" },
     ];
 
     const parentInfoFields = document.getElementById('parentInfoFields');

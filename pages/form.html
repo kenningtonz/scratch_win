@@ -43,7 +43,7 @@
         <br>
 
 
-        <label for="phone">Phone Number: </label><br>
+        <label for="phone">Phone: </label><br>
         <input type="number" id="phone" placeholder="000-000-0000">
         <span id="phoneError" class="error"></span>
         <br>
@@ -59,14 +59,29 @@
         <br>
         <br>
         <div id="parentInfoFields">
+            <p>Participants under the age of 16 must provide valid parent information, including name, email, and phone number.</p>
             <!-- Additional fields for parent information -->
-            <label for="parentName">Parent's Name: </label>
-            <input type="text" id="parentName">
-            <span id="parentError" class="error"></span>
+            <label for="GfName">Guardian First Name: </label>
+            <input type="text" id="GfName">
+            <span id="GfNameError" class="error"></span>
             <br>
-            <label for="parentEmail">Parent's Email: </label>
+
+            <label for="GlName">Guardian Last Name: </label>
+            <input type="text" id="GlName">
+            <span id="GlNameError" class="error"></span>
+            <br>
+
+
+            <label for="parentEmail">Guardian's Email: </label>
             <input type="email" id="parentEmail">
             <span id="parentEmailError" class="error"></span>
+            <br>
+
+            <label for="GpNumber">Guardian Phone Number: </label>
+            <input type="text" id="GpNumber">
+            <span id="GpNumberError" class="error"></span>
+            <br>
+
         </div>
         <input type="checkbox" id="rules">
         <label for="rules">I Consent to Rules and Regulations</label> <a href="">Terms and Conditions</a>
