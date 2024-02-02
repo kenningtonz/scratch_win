@@ -59,6 +59,10 @@ function resetErrors() {
     fieldsChecker.forEach(inputField => {
         inputField.error.innerText = "";
     });
+    fieldsCheckerIsMinor.forEach(inputField => {
+        inputField.error.innerText = "";
+    });
+
 }
 
 function formCheck(e) {
@@ -86,15 +90,50 @@ function formCheck(e) {
 
     if (errorsFound > 0) {
         console.log("FAIL");
-        
+
 
     } else {
+
         saveFormData(fieldsChecker);
         console.log(formData);
         console.log("PASS");
-        // do something with the data
+        successValues();
+    
     }
 
+}
+
+//funtion sucess
+//grab element
+// set inner textContent
+function successValues() {
+    const mySuccess = document.getElementById("success");
+    let successFName =  document.getElementById("successName");
+    let dob =  document.getElementById("birth");
+    let emailA =  document.getElementById("emailF");
+    let phoneNum =  document.getElementById("phoneF");
+    let street =  document.getElementById("street");
+    let cityF =  document.getElementById("cityF");
+    let provinceF =  document.getElementById("provinceF");
+    let postalF =  document.getElementById("postalF");
+
+
+
+
+
+    successFName.innerText = `${formData.fName} ${formData.lName}`;
+    dob.innerText = formData.date;
+    emailA.innerText = formData.email;
+    phoneNum.innerText = formData.phone;
+    street.innerText = formData.address;
+    cityF.innerText = formData.city;
+    postalF.innerText = formData.postal;
+    provinceF.innerText = formData.province;
+
+
+
+    mySuccess.style.display = 'block';
+    console.log("passssss");
 }
 
 
@@ -108,14 +147,7 @@ function needsGuardian() {
 }
 
 class FormData {
-    constructor(fName, lName, address, postal, province, city, phone, email, date, GuardianNameFirst,GuardianNameLast, parentEmail, GuardianNumber) {
-        if (isMinor == true) {
-            this.isMinor = true;
-            this.GuardianNameFirst = GuardianNameFirst;
-            this.GuardianNameLast = GuardianNameLast;
-            this.parentEmail = parentEmail;
-            this.GuardianNumber = GuardianNumber;
-        }
+    constructor(fName, lName, address, postal, province, city, phone, email, date) {
         this.fName = fName;
         this.lName = lName;
         this.address = address;
@@ -127,13 +159,25 @@ class FormData {
         this.date = date;
     }
 
+    setMinorFields(GuardianNameFirst,GuardianNameLast, parentEmail, GuardianNumber){
+        this.isMinor = true;
+        this.GuardianNameFirst = GuardianNameFirst;
+        this.GuardianNameLast = GuardianNameLast;
+        this.parentEmail = parentEmail;
+        this.GuardianNumber = GuardianNumber;
+    
+    }
+
 }
+
 
 let formData = {}
 
 function saveFormData(fieldsChecker) {
-  
-    formData =  (new FormData(fieldsChecker[0].field.value, fieldsChecker[1].field.value, fieldsChecker[2].field.value, fieldsChecker[3].field.value, fieldsChecker[4].field.value, fieldsChecker[5].field.value, fieldsChecker[6].field.value, fieldsChecker[7].field.value, fieldsChecker[8].field.value, fieldsChecker[9].field.value, fieldsChecker[10].field.value));
+    formData =  (new FormData(fieldsChecker[0].field.value, fieldsChecker[1].field.value, fieldsChecker[2].field.value, fieldsChecker[3].field.value, fieldsChecker[4].field.value, fieldsChecker[5].field.value, fieldsChecker[6].field.value, fieldsChecker[7].field.value , fieldsChecker[8].field.value ));
+  if(isMinor){
+    formData.setMinorFields(fieldsCheckerIsMinor[0].field.value, fieldsCheckerIsMinor[1].field.value,fieldsCheckerIsMinor[2].field.value,fieldsCheckerIsMinor[3].field.value)
+  }
 }
 
 // class FieldChecker{
