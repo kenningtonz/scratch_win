@@ -9,87 +9,93 @@
 </head>
 
 <body>
-    <h1>FORM</h1>
+    <!-- <h1>FORM</h1> -->
     <form id="myForm">
         <fieldset>
-            <label for="fName">First Name: </label><br>
-            <input type="text" id="fName" placeholder="First Name">
+            <span class="child50">
+                <label for="fName">First Name: </label><br>
+                <input type="text" id="fName" placeholder="First Name">
+                <p id="fNameError" class="error"></p>
+            </span>
+            <span class="child50">
+                <label for="lName">Last Name: </label><br>
+                <input type="text" id="lName" placeholder="Last Name">
+                <p id="lNameError" class="error"></p>
+            </span>
+            <span class="child100">
+                <label for="st">Address Line: </label><br>
+                <input type="text" id="st" placeholder="Street name and number ">
+                <p id="stError" class="error"></p>
+            </span>
+            <span class="child30">
+                <label for="postal">Postal: </label><br>
+                <input type="text" id="postal" placeholder="Postal Code">
+                <p id="postalError" class="error"></p>
+            </span>
 
-            <span id="fNameError" class="error"></span>
-            <br>
+            <span class="child30">
+                <label for="province">Province: </label><br>
+                <input type="text" id="province" placeholder="Province">
+                <p id="provinceError" class="error"></p>
+            </span>
+            <span class="child30">
+                <label for="city">City: </label><br>
+                <input type="text" id="city" placeholder="City">
+                <p id="cityError" class="error"></p>
+            </span>
+            <span class="child100">
+                <label for="phone">Phone Number: </label><br>
+                <input type="number" id="phone" placeholder="000-000-0000">
+                <p id="phoneError" class="error"></p>
+            </span>
 
-            <label for="lName">Last Name: </label><br>
-            <input type="text" id="lName" placeholder="Last Name">
+            <span class="child100">
+                <label for="email">Email Address: </label><br>
+                <input type="text" id="email" placeholder="email address">
+                <p id="emailError" class="error"></p>
+            </span>
+            <span class="child100">
+                <label for="password">Password: </label><br>
+                <input type="text" id="password">
+                <p id="passwordError" class="error"></p>
+            </span>
 
-            <span id="lNameError" class="error"></span>
-            <br>
+            <span class="child100">
+                <label for="date">Date Of Birth: </label><br>
+                <input type="date" id="date">
+                <p id="dateError" class="error"></p>
+            </span>
 
-            <label for="st">Address Line: </label><br>
-            <input type="text" id="st" placeholder="Street name and number ">
-            <span id="stError" class="error"></span>
-            <br>
-
-            <label for="postal">Postal: </label><br>
-            <input type="text" id="postal" placeholder="postal code">
-            <span id="postalError" class="error"></span>
-            <br>
-
-            <label for="province">Province: </label><br>
-            <input type="text" id="province" placeholder="province">
-            <span id="provinceError" class="error"></span>
-            <br>
-
-            <label for="city">City: </label><br>
-            <input type="text" id="city" placeholder="city">
-            <span id="cityError" class="error"></span>
-            <br>
-
-
-        <label for="phone">Phone: </label><br>
-        <input type="number" id="phone" placeholder="000-000-0000">
-        <span id="phoneError" class="error"></span>
-        <br>
-
-            <label for="email">Email Address: </label><br>
-            <input type="text" id="email" placeholder="email address">
-            <span id="emailError" class="error"></span>
-            <br>
-
-            <label for="date">Date Of Birth: </label><br>
-            <input type="date" id="date">
-            <span id="dateError" class="error"></span>
-            <br>
-            <br>
             <div id="parentInfoFields">
-            <p>Participants under the age of 16 must provide valid parent information, including name, email, and phone number.</p>
+                <p>Participants under the age of 16 must provide valid parent information, including name, email, and
+                    phone number.</p>
                 <!-- Additional fields for parent information -->
-                <label for="GfName">Guardian First Name: </label>
-                <input type="text" id="GfName">
-            <span id="GfNameError" class="error"></span>
-            <br>
-
-            <label for="GlName">Guardian Last Name: </label>
-            <input type="text" id="GlName">
-                <span id="GlNameError" class="error"></span>
-                <br>
-
-
-                <label for="parentEmail">Guardian's Email: </label>
-                <input type="email" id="parentEmail">
-                <span id="parentEmailError" class="error"></span>
-            <br>
-
-            <label for="GpNumber">Guardian Phone Number: </label>
-            <input type="text" id="GpNumber">
-            <span id="GpNumberError" class="error"></span>
-            <br>
-
+                <span class="child50">
+                    <label for="GfName">Guardian's First Name: </label>
+                    <input type="text" id="GfName">
+                    <p id="GfNameError" class="error"></p>
+                </span>
+                <span class="child50">
+                    <label for="GlName">Guardian's Last Name: </label>
+                    <input type="text" id="GlName">
+                    <p id="GlNameError" class="error"></p>
+                </span>
+                <span class="child100">
+                    <label for="parentEmail">Guardian's Email: </label>
+                    <input type="email" id="parentEmail">
+                    <p id="parentEmailError" class="error"></p>
+                </span>
+                <span class="child100">
+                    <label for="GpNumber">Guardian's Phone Number: </label>
+                    <input type="text" id="GpNumber">
+                    <p id="GpNumberError" class="error"></p>
+                </span>
             </div>
 
+            <h2>
+                Terms and Conditions:
+            </h2>
             <div id="rulesBox">
-                <h2>
-                    Rules and Regulations:
-                </h2>
                 <h3>
                     Usage of Data Collected on the Site:
                 </h3>
@@ -146,13 +152,17 @@
                     have any questions or concerns, please contact our support team for assistance.
                 </p>
             </div>
-            <input type="checkbox" id="rules" class="disabled">
-            <label for="rules">I Consent to Rules and Regulations</label>
-            <br>
-            <br>
-            <input type="checkbox" id="sponsors">
-            <label for="sponsors">I Consent to Receive Communications Regarding BuyMore Dollar Products and Sponsors
-            </label>
+            <span class="checkBox child100">
+                <input type="checkbox" id="rules" class="disabled">
+                <label for="rules">I Consent to Rules and Regulations</label>
+                <p id="rulesError" class="error"></p>
+            </span>
+
+            <span class="checkBox child100">
+                <input type="checkbox" id="sponsors">
+                <label for="sponsors">I Consent to Receive Communications Regarding BuyMore Dollar Products and Sponsors
+                </label>
+            </span>
         </fieldset>
         <br>
         <br>
@@ -171,7 +181,6 @@
         </div>
 
         <input type="submit" id="formSubmit">
-
 
     </form>
     <script src="script.js"></script>
