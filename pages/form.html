@@ -3,51 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
     <title>Form</title>
 </head>
 <body>
     <h1>FORM</h1>
-    <form action="">
+    <form id="myForm" >
+        <fieldset>
         <label for="fName">First Name: </label><br>
         <input type="text" id="fName" placeholder="First Name">
+        
+        <span id="fNameError" class="error"></span>
         <br>
+
         <label for="lName">Last Name: </label><br>
         <input type="text" id="lName" placeholder="Last Name">
+        
+        <span id="lNameError" class="error"></span>
         <br>
+
         <label for="st">Address Line: </label><br>
         <input type="text" id="st" placeholder="Street name and number ">
+        <span id="stError" class="error"></span>
         <br>
+
         <label for="postal">Postal: </label><br>
         <input type="text" id="postal" placeholder="postal code">
+        <span id="postalError" class="error"></span>
         <br>
+
         <label for="province">Province: </label><br>
         <input type="text" id="province" placeholder="province">
+        <span id="provinceError" class="error"></span>
         <br>
+
         <label for="city">City: </label><br>
         <input type="text" id="city" placeholder="city">
+        <span id="cityError" class="error"></span>
         <br>
+
+
         <label for="phone">Phone Number: </label><br>
-        <input type="number" id="phone" placeholder="phone">
+        <input type="number" id="phone" placeholder="000-000-0000">
+        <span id="phoneError" class="error"></span>
         <br>
+
         <label for="email">Email Address: </label><br>
         <input type="text" id="email" placeholder="email address">
+        <span id="emailError" class="error"></span>
         <br>
+
         <label for="date">Date Of Birth: </label><br>
         <input type="date" id="date">
+        <span id="dateError" class="error"></span>
         <br>
         <br>
+        <div id="parentInfoFields">
+            <!-- Additional fields for parent information -->
+            <label for="parentName">Parent's Name: </label>
+            <input type="text" id="parentName">
+            <span id="parentError" class="error"></span>
+            <br>
+            <label for="parentEmail">Parent's Email: </label>
+            <input type="email" id="parentEmail">
+            <span id="parentEmailError" class="error"></span>
+        </div>
         <input type="checkbox" id="rules">
         <label for="rules">I Consent to Rules and Regulations</label> <a href="">Terms and Conditions</a>
         <br>
         <br>
         <input type="checkbox" id="sponsors">
         <label for="sponsors">I Consent to Receive Communications Regarding BuyMore Dollar Products and Sponsors </label>
-        
+    </fieldset>
         <br>
         <br>
-        <button onclick="">Submit</button>
+        <input type="submit" id="formSubmit">
 
 
     </form>
+    <script src="script.js"></script>
 </body>
 </html>
