@@ -1,46 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="main.css">
     <title>Form</title>
 </head>
+
 <body>
     <h1>FORM</h1>
-    <form id="myForm" >
+    <form id="myForm">
         <fieldset>
-        <label for="fName">First Name: </label><br>
-        <input type="text" id="fName" placeholder="First Name">
-        
-        <span id="fNameError" class="error"></span>
-        <br>
+            <label for="fName">First Name: </label><br>
+            <input type="text" id="fName" placeholder="First Name">
 
-        <label for="lName">Last Name: </label><br>
-        <input type="text" id="lName" placeholder="Last Name">
-        
-        <span id="lNameError" class="error"></span>
-        <br>
+            <span id="fNameError" class="error"></span>
+            <br>
 
-        <label for="st">Address Line: </label><br>
-        <input type="text" id="st" placeholder="Street name and number ">
-        <span id="stError" class="error"></span>
-        <br>
+            <label for="lName">Last Name: </label><br>
+            <input type="text" id="lName" placeholder="Last Name">
 
-        <label for="postal">Postal: </label><br>
-        <input type="text" id="postal" placeholder="postal code">
-        <span id="postalError" class="error"></span>
-        <br>
+            <span id="lNameError" class="error"></span>
+            <br>
 
-        <label for="province">Province: </label><br>
-        <input type="text" id="province" placeholder="province">
-        <span id="provinceError" class="error"></span>
-        <br>
+            <label for="st">Address Line: </label><br>
+            <input type="text" id="st" placeholder="Street name and number ">
+            <span id="stError" class="error"></span>
+            <br>
 
-        <label for="city">City: </label><br>
-        <input type="text" id="city" placeholder="city">
-        <span id="cityError" class="error"></span>
-        <br>
+            <label for="postal">Postal: </label><br>
+            <input type="text" id="postal" placeholder="postal code">
+            <span id="postalError" class="error"></span>
+            <br>
+
+            <label for="province">Province: </label><br>
+            <input type="text" id="province" placeholder="province">
+            <span id="provinceError" class="error"></span>
+            <br>
+
+            <label for="city">City: </label><br>
+            <input type="text" id="city" placeholder="city">
+            <span id="cityError" class="error"></span>
+            <br>
 
 
         <label for="phone">Phone: </label><br>
@@ -48,33 +50,33 @@
         <span id="phoneError" class="error"></span>
         <br>
 
-        <label for="email">Email Address: </label><br>
-        <input type="text" id="email" placeholder="email address">
-        <span id="emailError" class="error"></span>
-        <br>
+            <label for="email">Email Address: </label><br>
+            <input type="text" id="email" placeholder="email address">
+            <span id="emailError" class="error"></span>
+            <br>
 
-        <label for="date">Date Of Birth: </label><br>
-        <input type="date" id="date">
-        <span id="dateError" class="error"></span>
-        <br>
-        <br>
-        <div id="parentInfoFields">
+            <label for="date">Date Of Birth: </label><br>
+            <input type="date" id="date">
+            <span id="dateError" class="error"></span>
+            <br>
+            <br>
+            <div id="parentInfoFields">
             <p>Participants under the age of 16 must provide valid parent information, including name, email, and phone number.</p>
-            <!-- Additional fields for parent information -->
-            <label for="GfName">Guardian First Name: </label>
-            <input type="text" id="GfName">
+                <!-- Additional fields for parent information -->
+                <label for="GfName">Guardian First Name: </label>
+                <input type="text" id="GfName">
             <span id="GfNameError" class="error"></span>
             <br>
 
             <label for="GlName">Guardian Last Name: </label>
             <input type="text" id="GlName">
-            <span id="GlNameError" class="error"></span>
-            <br>
+                <span id="GlNameError" class="error"></span>
+                <br>
 
 
-            <label for="parentEmail">Guardian's Email: </label>
-            <input type="email" id="parentEmail">
-            <span id="parentEmailError" class="error"></span>
+                <label for="parentEmail">Guardian's Email: </label>
+                <input type="email" id="parentEmail">
+                <span id="parentEmailError" class="error"></span>
             <br>
 
             <label for="GpNumber">Guardian Phone Number: </label>
@@ -82,14 +84,76 @@
             <span id="GpNumberError" class="error"></span>
             <br>
 
-        </div>
-        <input type="checkbox" id="rules">
-        <label for="rules">I Consent to Rules and Regulations</label> <a href="">Terms and Conditions</a>
-        <br>
-        <br>
-        <input type="checkbox" id="sponsors">
-        <label for="sponsors">I Consent to Receive Communications Regarding BuyMore Dollar Products and Sponsors </label>
-    </fieldset>
+            </div>
+
+            <div id="rulesBox">
+                <h2>
+                    Rules and Regulations:
+                </h2>
+                <h3>
+                    Usage of Data Collected on the Site:
+                </h3>
+                <p>
+                    BuyMore Dollars Inc. values your privacy and is committed to protecting the information collected
+                    during
+                    your participation in the Virtual Scratch Off Contest. By engaging with the site, you consent to the
+                    collection, processing, and use of your data for contest-related purposes only. Rest assured, your
+                    information will be handled with the utmost care and in accordance with applicable data protection
+                    laws.
+                </p>
+                <h3>
+                    Minimum Age of Users:
+                </h3>
+                <p>
+                    To participate in the Virtual Scratch Off Contest, users must be at least 16 years old. Users under
+                    the
+                    age of 16 are strictly prohibited from entering unless accompanied by a guardian's permission.
+                    BuyMore
+                    Dollars Inc. takes the protection of minors seriously and urges parents or guardians to supervise
+                    and
+                    approve their children's participation in the contest.
+                </p>
+                <h3>
+                    Chance of Winning and Prize Distribution:
+                </h3>
+                <p>
+                    Winners of the Virtual Scratch Off Contest will be determined through a random draw, ensuring a fair
+                    and
+                    unbiased selection process. Prize distribution will adhere to the specified tiers: a grand prize,
+                    second
+                    tier prizes, third tier prizes, and fourth tier prizes, as outlined in the contest details. By
+                    participating, contestants acknowledge the unpredictability of winning and understand that the
+                    majority
+                    of plays may result in a default "Please Play Again."
+                </p>
+                <h3>
+                    Opting Out of Communications:
+                </h3>
+                <p>
+                    BuyMore Dollars Inc. may send communications related to contest updates, promotions, and
+                    newsletters.
+                    Contestants have the option to opt out of receiving such communications by updating their
+                    preferences in
+                    their account settings or following the provided opt-out instructions in the communications
+                    received.
+                    Please note that opting out may affect your receipt of important contest-related information.
+                </p>
+                <p>
+                    By participating in the Virtual Scratch Off Contest, you agree to abide by these conditions. BuyMore
+                    Dollars Inc. reserves the right to update these conditions as necessary, and any changes will be
+                    reflected on this legal page. We appreciate your understanding and compliance with these terms. If
+                    you
+                    have any questions or concerns, please contact our support team for assistance.
+                </p>
+            </div>
+            <input type="checkbox" id="rules" class="disabled">
+            <label for="rules">I Consent to Rules and Regulations</label>
+            <br>
+            <br>
+            <input type="checkbox" id="sponsors">
+            <label for="sponsors">I Consent to Receive Communications Regarding BuyMore Dollar Products and Sponsors
+            </label>
+        </fieldset>
         <br>
         <br>
         <input type="submit" id="formSubmit">
@@ -98,4 +162,5 @@
     </form>
     <script src="script.js"></script>
 </body>
+
 </html>
