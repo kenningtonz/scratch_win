@@ -55,6 +55,9 @@ function hasDate(data) {
     }
 }
 
+
+
+
 function resetErrors() {
     fieldsChecker.forEach(inputField => {
         inputField.error.innerText = "";
@@ -71,6 +74,16 @@ function formCheck(e) {
     console.log("FORM CHECKED");
     let errorsFound = 0;
     resetErrors();
+
+    let rulesCheckbox = document.getElementById('rules');
+    let rulesCheckboxError = document.getElementById('checkboxError');
+    
+    if (!rulesCheckbox.checked) {
+        rulesCheckboxError.innerText = "*Please consent to the rules and regulations.";
+        errorsFound += 1;
+    } else {
+        rulesCheckboxError.innerText = "";
+    }   
 
     if (isMinor == true) {
         fieldsCheckerIsMinor.forEach(inputField => {
@@ -90,24 +103,25 @@ function formCheck(e) {
 
     if (errorsFound > 0) {
         console.log("FAIL");
-
-
     } else {
 
         saveFormData(fieldsChecker);
         console.log(formData);
         console.log("PASS");
         successValues();
-    
     }
 
+
+   
 }
+
 
 //funtion sucess
 //grab element
 // set inner textContent
 function successValues() {
     const mySuccess = document.getElementById("success");
+    const parentInfo = document.getElementById("parentInfo");
     let successFName =  document.getElementById("successName");
     let dob =  document.getElementById("birth");
     let emailA =  document.getElementById("emailF");
@@ -116,8 +130,19 @@ function successValues() {
     let cityF =  document.getElementById("cityF");
     let provinceF =  document.getElementById("provinceF");
     let postalF =  document.getElementById("postalF");
+    let gFirst =  document.getElementById("gFirst");
+    let gLast =  document.getElementById("gLast");
+    let gEmail =  document.getElementById("gEmail");
+    let gNum =  document.getElementById("gNum");
 
 
+    if (isMinor == true) {
+        parentInfo.style.display = 'block';
+        gFirst.innerText= formData.GuardianNameFirst;
+        gLast.innerText= formData.GuardianNameLast;
+        gEmail.innerText= formData.parentEmail;
+        gNum.innerText= formData.GuardianNumber;
+    }
 
 
 
@@ -129,8 +154,6 @@ function successValues() {
     cityF.innerText = formData.city;
     postalF.innerText = formData.postal;
     provinceF.innerText = formData.province;
-
-
 
     mySuccess.style.display = 'block';
     console.log("passssss");
@@ -209,7 +232,7 @@ function formInitiator() {
     let date = document.getElementById('date');
     let dateError = document.getElementById('dateError');
 
-
+   
     let GuardianNameFirst = document.getElementById('GfName');
     let GfNameError = document.getElementById('GfNameError');
 
@@ -224,22 +247,22 @@ function formInitiator() {
     let parentEmailError = document.getElementById('parentEmailError');
 
     fieldsChecker = [
-        { field: fName, checker: hasChars, error: fNameError, msg: "Please enter a valid name." },
-        { field: lName, checker: hasChars, error: lNameError, msg: "Please enter a valid name." },
-        { field: address, checker: hasCharsNum, error: stError, msg: "Invalid Address" },
-        { field: postal, checker: hasSpecialChars, error: postalError, msg: "Invalid Postal Code" },
-        { field: province, checker: hasChars, error: provinceError, msg: "Invalid Province" },
-        { field: city, checker: hasChars, error: cityError, msg: "Invalid City" },
-        { field: phone, checker: hasNums, error: phoneError, msg: "The phone number you entered is not in the correct format. Please use only numbers." },
-        { field: email, checker: emailChars, error: emailError, msg: "The email address you entered is not valid. Please provide a valid email address." },
-        { field: date, checker: hasDate, error: dateError, msg: "Invalid Date" },
+        { field: fName, checker: hasChars, error: fNameError, msg: "*Please enter a valid name." },
+        { field: lName, checker: hasChars, error: lNameError, msg: "*Please enter a valid name." },
+        { field: address, checker: hasCharsNum, error: stError, msg: "*Invalid Address" },
+        { field: postal, checker: hasSpecialChars, error: postalError, msg: "*Invalid Postal Code" },
+        { field: province, checker: hasChars, error: provinceError, msg: "*Invalid Province" },
+        { field: city, checker: hasChars, error: cityError, msg: "*Invalid City" },
+        { field: phone, checker: hasNums, error: phoneError, msg: "*The phone number you entered is not in the correct format.use only numbers." },
+        { field: email, checker: emailChars, error: emailError, msg: "*The email address you entered is not valid. Please provide a valid email address." },
+        { field: date, checker: hasDate, error: dateError, msg: "*Invalid Date" }
     ];
 
     fieldsCheckerIsMinor = [
-        { field: GuardianNameFirst, checker: hasChars, error: GfNameError, msg: "Invalid Name" },
-        { field: GuardianNameLast, checker: hasChars, error: GlNameError, msg: "Invalid Name" },
-        { field: parentEmail, checker: emailChars, error: parentEmailError, msg: "Invalid Email" },
-        { field: GuardianNumber, checker: hasNums, error: GpNumberError, msg: "Invalid Phone Number" },
+        { field: GuardianNameFirst, checker: hasChars, error: GfNameError, msg: "*Invalid Name" },
+        { field: GuardianNameLast, checker: hasChars, error: GlNameError, msg: "*Invalid Name" },
+        { field: parentEmail, checker: emailChars, error: parentEmailError, msg: "*Invalid Email" },
+        { field: GuardianNumber, checker: hasNums, error: GpNumberError, msg: "*Invalid Phone Number" },
     ]
 
 
@@ -264,7 +287,6 @@ function formInitiator() {
     });
 
 
-
     let formSubmit = document.getElementById("formSubmit");
     formSubmit.addEventListener("click", formCheck);
 
@@ -274,21 +296,6 @@ document.addEventListener("DOMContentLoaded", function () {
     formInitiator();
 });
 
-
-
-// function createErrors(parentElement, message) {
-//     let error = document.createElement("p");
-//     error.id = `error-${parentElement.id}`
-//     error.innerText = message;
-//     parentElement.appendChild(error);
-// }
-
-// function removeErrors(parentElement) {
-//     let error = document.getElementById(`error-${parentElement.id}`);
-//     if (error) {
-//         error.remove();
-//     }
-// }
 
 
 let rulesBox = document.getElementById('rulesBox');
