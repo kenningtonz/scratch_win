@@ -5,98 +5,101 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="main.css">
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,600;1,300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,600;1,300&display=swap"
+        rel="stylesheet">
     <title>Form</title>
 </head>
 
 <body>
-    <!-- <h1>FORM</h1> -->
     <form id="myForm">
         <fieldset>
             <span class="child50">
                 <label for="fName">First Name: </label>
                 <input type="text" id="fName" placeholder="First Name">
-                <span id="fNameError" class="error"></span>
+                <p id="fNameError" class="error"></p>
             </span>
             <span class="child50">
                 <label for="lName">Last Name: </label>
                 <input type="text" id="lName" placeholder="Last Name">
-                <span id="lNameError" class="error"></span>
+                <p id="lNameError" class="error"></p>
             </span>
             <span class="child100">
                 <label for="st">Address Line: </label>
-                <input type="text" id="st" placeholder="Street name and number ">
-                <span id="stError" class="error"></span>
+                <input type="text" id="st" placeholder="Address Line">
+                <p id="stError" class="error"></p>
             </span>
             <span class="child30">
                 <label for="postal">Postal: </label>
                 <input type="text" id="postal" placeholder="Postal Code">
-                <span id="postalError" class="error"></span>
+                <p id="postalError" class="error"></p>
             </span>
 
             <span class="child30">
                 <label for="province">Province: </label>
                 <input type="text" id="province" placeholder="Province">
-                <span id="provinceError" class="error"></span>
+                <p id="provinceError" class="error"></p>
             </span>
             <span class="child30">
                 <label for="city">City: </label>
                 <input type="text" id="city" placeholder="City">
-                <span id="cityError" class="error"></span>
+                <p id="cityError" class="error"></p>
             </span>
             <span class="child100">
                 <label for="phone">Phone Number: </label>
-                <input type="number" id="phone" placeholder="0000000000">
-                <span id="phoneError" class="error"></span>
+                <input type="tel" id="phone" placeholder="0000000000">
+                <p id="phoneError" class="error"></p>
             </span>
 
             <span class="child100">
                 <label for="email">Email Address: </label>
-                <input type="text" id="email" placeholder="email address">
-                <span id="emailError" class="error"></span>
+                <input type="text" id="email" placeholder="Email Address">
+                <p id="emailError" class="error"></p>
             </span>
             <span class="child100">
                 <label for="password">Password: </label>
                 <input type="text" id="password">
-                <span id="passwordError" class="error"></span>
+                <p id="passwordError" class="error"></p>
+
             </span>
 
             <span class="child100">
                 <label for="date">Date Of Birth: </label>
                 <input type="date" id="date">
-                <span id="dateError" class="error"></span>
+                <p id="dateError" class="error"></p>
             </span>
 
             <div id="parentInfoFields">
                 <section class="myFields">
 
-                
-                <span class="under">*Participants under the age of 16 must provide valid parent information, including name, email, and
-                    phone number.</span>
-                <!-- Additional fields for parent information -->
-                <span class="child55">
-                    <label for="GfName">Guardian's First Name: </label>
-                    <input type="text" id="GfName">
-                    <span id="GfNameError" class="error"></span>
-                </span>
-                <span class="child55">
-                    <label for="GlName">Guardian's Last Name: </label>
-                    <input type="text" id="GlName">
-                    <span id="GlNameError" class="error"></span>
-                </span>
-                <span class="child100">
-                    <label for="parentEmail">Guardian's Email: </label>
-                    <input type="email" id="parentEmail">
-                    <span id="parentEmailError" class="error"></span>
-                </span>
-                <span class="child100">
-                    <label for="GpNumber">Guardian's Phone Number: </label>
-                    <input type="text" id="GpNumber">
-                    <span id="GpNumberError" class="error"></span>
-                </span>
-            </section>
+
+                    <span class="under">*Participants under the age of 16 must provide valid parent information,
+                        including name, email, and
+                        phone number.</span>
+                    <!-- Additional fields for parent information -->
+                    <span class="child55">
+                        <label for="GfName">Guardian's First Name: </label>
+                        <input type="text" id="GfName">
+                        <p id="GfNameError" class="error"></p>
+                    </span>
+                    <span class="child55">
+                        <label for="GlName">Guardian's Last Name: </label>
+                        <input type="text" id="GlName">
+                        <p id="GlNameError" class="error"></p>
+                    </span>
+                    <span class="child100">
+                        <label for="parentEmail">Guardian's Email: </label>
+                        <input type="email" id="parentEmail">
+                        <p id="parentEmailError" class="error"></p>
+                    </span>
+                    <span class="child100">
+                        <label for="GpNumber">Guardian's Phone Number: </label>
+                        <input type="text" id="GpNumber">
+                        <p id="GpNumberError" class="error"></p>
+                    </span>
+                </section>
             </div>
 
             <h2>
@@ -159,54 +162,80 @@
                     have any questions or concerns, please contact our support team for assistance.
                 </p>
             </div>
-            <div class="checkBox">
+            <div class="child100 checkBox">
                 <input type="checkbox" id="rules" class="disabled">
-                <label for="rules">I Consent to Rules and Regulations</label>
-                <span class="error" id="checkboxError"></span>
+                <label class="disabled" id="rulesLabel" for="rules">I Consent to Rules and Regulations</label>
+                <p class="error" id="checkboxError"></p>
             </div>
-            
-            <div class="checkBox">
+
+            <div class="child100 checkBox">
                 <input type="checkbox" id="sponsors">
-                <label for="sponsors">I Consent to Receive Communications Regarding BuyMore Dollar Products and Sponsors</label>
+                <label for="sponsors">I Consent to Receive Communications Regarding BuyMore Dollar Products and
+                    Sponsors</label>
             </div>
             <button id="formSubmit">Submit</button>
         </fieldset>
-        
-        
-        
+
+
+
         <div id="success">
-            
-                <div class="formStyle">
-                    <img src="../images/logo.png" class="logo" alt="">
-                    <h2>Congratulations!</h2>
-                    <p> Your Form has been Successfully Submitted!</p>
-                    <section class="line"></section>
-                    <p class="ready">Get ready to embark on a thrilling journey of virtual scratch-offs and a chance to win BuyMore Dollars.</p>
-                    <!-- headers -->
+
+            <div class="formStyle">
+                <img src="../images/complete.png" class="logo" alt="">
+                <h2>Congratulations!</h2>
+                <p> Your Form has been Successfully Submitted!</p>
+                <section class="line"></section>
+                <p class="ready">Get ready to embark on a thrilling journey of virtual scratch-offs and a chance to win
+                    BuyMore Dollars.</p>
+                <!-- headers -->
                 <section class="successInfo">
                     <p class="sub">Here's a quick summary of your submission:</p>
-                        <span><strong>Full Name:</strong><p id="successName"></p></span> 
-                        <span><strong>Date of Birth:</strong><p id="birth"></p></span> 
-                        <span><strong>Email Address:</strong><p id="emailF"></p></span> 
-                        <span><strong>Phone Number:</strong><p id="phoneF"></p></span> 
-                        <span><strong>Street Address:</strong><p id="street"></p></span> 
-                        <span><strong>City:</strong><p id="cityF"></p></span> 
-                        <span><strong>State/Province:</strong><p id="provinceF"></p></span> 
-                        <span><strong>ZIP/Postal Code:</strong><p id="postalF"></p></span> 
+                    <span><strong>Full Name:</strong>
+                        <p id="successName"></p>
+                    </span>
+                    <span><strong>Date of Birth:</strong>
+                        <p id="birth"></p>
+                    </span>
+                    <span><strong>Email Address:</strong>
+                        <p id="emailF"></p>
+                    </span>
+                    <span><strong>Phone Number:</strong>
+                        <p id="phoneF"></p>
+                    </span>
+                    <span><strong>Street Address:</strong>
+                        <p id="street"></p>
+                    </span>
+                    <span><strong>City:</strong>
+                        <p id="cityF"></p>
+                    </span>
+                    <span><strong>State/Province:</strong>
+                        <p id="provinceF"></p>
+                    </span>
+                    <span><strong>ZIP/Postal Code:</strong>
+                        <p id="postalF"></p>
+                    </span>
 
-                        <div id="parentInfo">
-                            <span><strong>Guardian's First Name:</strong> <p id="gFirst"></p></span> 
-                            <span><strong>Guardian's Last Name:</strong> <p id="gLast"></p></span> 
-                            <span><strong>Guardian's Email:</strong> <p id="gEmail"></p></span> 
-                            <span><strong>Guardian's Phone Number:</strong> <p id="gNum"></p></span> 
-                        </div>
-                    </section>
-                    <p class="scratchP">Hit the next button to start scratching!</p>
-                    <button id="formNext">Next</button>
-                </div>
+                    <div id="parentInfo">
+                        <span><strong>Guardian's First Name:</strong>
+                            <p id="gFirst"></p>
+                        </span>
+                        <span><strong>Guardian's Last Name:</strong>
+                            <p id="gLast"></p>
+                        </span>
+                        <span><strong>Guardian's Email:</strong>
+                            <p id="gEmail"></p>
+                        </span>
+                        <span><strong>Guardian's Phone Number:</strong>
+                            <p id="gNum"></p>
+                        </span>
+                    </div>
+                </section>
+                <p class="scratchP">Hit the next button to start scratching!</p>
+                <button id="formNext">Next</button>
+            </div>
         </div>
 
-        
+
 
     </form>
     <script src="script.js"></script>

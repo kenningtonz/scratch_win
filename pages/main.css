@@ -1,8 +1,14 @@
-body {
+* {
     box-sizing: border-box;
-    background-color: #fdfbf3;
+    margin: 0;
+    padding: 0;
 }
 
+body {
+
+    background-color: #fdfbf3;
+    padding: 40px;
+}
 
 
 
@@ -39,36 +45,29 @@ body {
 
 
 fieldset {
+    border: none;
     border-radius: 25px;
     background-color: #badc58;
     display: flex;
     flex-wrap: wrap;
     padding: 50px;
-    gap: 15px;
-    max-width: 45%;
+    gap: 8px;
+    max-width: 800px;
     margin: 0 auto;
     align-items: center;
 }
 
-.checkBox {
-
-    margin-top: 10px;
+input[type='checkbox'] {
+    accent-color: #282e65;
 }
 
-#checkboxError {
-    position: absolute;
-    display: block;
-    color: #fc1616;
-    font-family: 'Poppins', sans-serif;
-    font-style: italic;
-}
 
 .error {
-    position: absolute;
+    height: 24px;
+    font-size: 1rem;
     color: #fc1616;
     font-family: 'Poppins', sans-serif;
     font-style: italic;
-
 }
 
 .checkBox input[type="checkbox"] {
@@ -76,14 +75,12 @@ fieldset {
     height: 19px;
     border: 2px solid #4f7340;
     border-radius: 5px;
-
 }
 
 input::placeholder {
     color: #aebeb1;
     font-family: 'Poppins', sans-serif;
     font-weight: 100;
-
 }
 
 
@@ -103,6 +100,7 @@ label {
 }
 
 
+
 .under {
     display: block;
     margin: 0 auto;
@@ -118,34 +116,36 @@ label {
 input {
     border-radius: 5px;
     background-color: #eefef1;
-    border: 1px solid #4f7340;
+    border: 2px solid #eefef1;
     padding: 13px;
     width: 100%;
     margin-top: 5px;
     margin-bottom: 5px;
     font-family: 'Poppins', sans-serif;
     font-size: 17px;
+    margin-left: 0;
+    margin-right: 0;
 }
 
-
+input:focus {
+    outline: none;
+    border: 2px solid #4f7340;
+}
 
 .child100 {
-    margin: 10px;
     flex: 1 100%;
 }
 
 .child50 {
-    margin: 10px;
-    flex: 1;
+    flex: 1 49%;
 }
-
 
 #parentInfoFields {
     display: none;
-
 }
 
-#formSubmit {
+#formSubmit,
+#formNext {
     background-color: #282e65;
     width: 200px;
     display: flex;
@@ -156,10 +156,10 @@ input {
     color: #eefef1;
     border-radius: 8px;
     font-size: 35px;
-    margin-top: 90px;
+    margin-top: 60px;
     font-family: 'Poppins', sans-serif;
     cursor: pointer;
-    margin-bottom: -20px;
+
 }
 
 
@@ -167,18 +167,15 @@ input {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    margin: 0 auto;
-    gap: 15px;
+
 }
 
 .child55 {
-    margin: 10px;
-    flex: 1;
+    flex: 1 100%;
 }
 
 .child30 {
-    margin: 10px;
-    flex: 1;
+    flex: 1 33%;
 }
 
 #rulesBox h3 {
@@ -210,14 +207,13 @@ h2 {
 }
 
 .formStyle {
-
     border-radius: 25px;
     background-color: #badc58;
     text-align: center;
     margin-top: 50px;
     padding: 50px;
     gap: 15px;
-    max-width: 45%;
+    max-width: 800px;
     margin: 0 auto;
     align-items: center;
     border: 1px solid black;
@@ -256,7 +252,6 @@ h2 {
 .formStyle p {
     font-family: 'Poppins', sans-serif;
     font-size: 20px;
-
 }
 
 #success .ready {
@@ -307,21 +302,4 @@ h2 {
     font-size: 20px;
     font-weight: lighter;
     margin-bottom: 10px;
-}
-
-#formNext {
-    background-color: #282e65;
-    width: 200px;
-    display: flex;
-    padding: 10px;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    color: #eefef1;
-    border-radius: 8px;
-    font-size: 35px;
-    margin-top: 30px;
-    font-family: 'Poppins', sans-serif;
-    cursor: pointer;
-
 }
