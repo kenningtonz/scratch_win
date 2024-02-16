@@ -61,6 +61,9 @@ input[type='checkbox'] {
     accent-color: #282e65;
 }
 
+#passwordError {
+    height: 48px;
+}
 
 .error {
     height: 24px;

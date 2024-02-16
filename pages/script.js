@@ -20,7 +20,7 @@ function phoneReg(data) {
 }
 
 function passwordCheck(data) {
-    let passwordPattern = /^(?=.[A-Za-z])(?=.\d)(?=.[@$!%#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
+    let passwordPattern =  /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
     //at least one number, one lowercase and one uppercase letter
     //at least six characters
     // has a special character
@@ -273,7 +273,7 @@ function formInitiator() {
         { field: phone, checker: phoneReg, error: phoneError, msg: "*The phone number you entered is not in the correct format.use only numbers." },
         { field: email, checker: emailReg, error: emailError, msg: "*Please provide a valid email address." },
         { field: date, checker: hasDate, error: dateError, msg: "*Invalid Date" },
-        { field: password, checker: passwordCheck, error: passwordError, msg: "*Password must contain at least one number, one uppercase and lowercase letter, and at least 6 or more characters." }
+        { field: password, checker: passwordCheck, error: passwordError, msg: "*Must contain at least one number, upper and lower case letter, and at least 6 characters." }
     ];
 
     fieldsCheckerIsMinor = [
